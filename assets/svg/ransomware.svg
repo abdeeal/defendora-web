@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.0954 18.1892C10.2251 15.9585 11.9923 14.2726 14.1987 13.9192C16.3772 13.5703 19.105 13.0602 21.2305 12.4239C23.9034 11.6238 27.5286 10.0539 29.8162 9.01576C31.2034 8.38626 32.7966 8.38626 34.1838 9.01576C36.4714 10.0539 40.0966 11.6238 42.7695 12.4239C44.895 13.0602 47.6228 13.5703 49.8013 13.9192C52.0077 14.2726 53.7749 15.9585 53.9046 18.1892C54.418 27.02 53.5497 48.9163 33.3725 55.5791C32.4916 55.87 31.5084 55.87 30.6275 55.5791C10.4503 48.9163 9.58202 27.02 10.0954 18.1892Z" fill="#DE1B0A"/>
+<path d="M14 19.919V23.2029C14 24.413 15.7485 24.5829 15.9813 23.3953L16.3545 21.4922C16.4482 21.014 16.7134 20.5864 17.1002 20.2899L19.0415 18.8016C19.9438 18.1098 19.1758 16.6885 18.1027 17.0641L15.3393 18.0313C14.5371 18.312 14 19.0691 14 19.919Z" fill="white"/>
+<path d="M36 40.5L38 42.5V45" stroke="#C8D1EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 40.5L26 42.5V45" stroke="#C8D1EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M39 35H42L44 37" stroke="#C8D1EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M38 28H41L43 26" stroke="#C8D1EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M26 28H23L21 26" stroke="#C8D1EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M25 35H22L20 37" stroke="#C8D1EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M29 21L27 18" stroke="#C8D1EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M35 21L37 18" stroke="#C8D1EA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M32 23C32.3396 23 32.6733 23.0255 33 23.0723V41.9268C32.6733 41.9735 32.3396 42 32 42C31.6604 42 31.3267 41.9735 31 41.9268V23.0723C31.3267 23.0255 31.6604 23 32 23ZM35 23.6738C37.3649 24.7973 39 27.2076 39 30V35C39 37.7922 37.3647 40.2016 35 41.3252V23.6738ZM29 41.3252C26.6353 40.2016 25 37.7922 25 35V30C25 27.2076 26.6351 24.7973 29 23.6738V41.3252Z" fill="#C8D1EA"/>
+</svg>

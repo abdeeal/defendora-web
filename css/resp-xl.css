@@ -1,0 +1,30 @@
+@media (width < 80rem) {
+  .navbar {
+    padding: 12px 0px;
+  }
+
+  .navbar-light {
+    padding: 20px 32px;
+  }
+
+  .navbar-wrapper {
+    padding: 20px 32px;
+  }
+
+  .owl-stage-outer {
+    padding-bottom: 28px;
+  }
+
+  .owl-nav button {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    padding: 0px 12px !important;
+    border-radius: 999px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #form-register, #form-login {
+    top: 12% !important
+  }
+}

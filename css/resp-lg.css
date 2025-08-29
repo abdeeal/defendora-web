@@ -1,0 +1,29 @@
+@media (width < 64rem) {
+  .nav-items {
+    display: none;
+  }
+
+  .navbar {
+    padding: 0px 32px;
+  }
+  .navbar-light {
+    padding: 0px 32px;
+  }
+
+  .navbar-wrapper {
+    padding: 40px 0px;
+  }
+
+  .nav-right-items {
+    display: none;
+  }
+
+  .btn-burger {
+    display: inline;
+  }
+
+  .nav-modal-active {
+    display: flex;
+  }
+
+}

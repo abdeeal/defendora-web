@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="./lib/owlCarousel/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="./lib/owlCarousel/dist/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/resp-2xl.css">
+  <link rel="stylesheet" href="./css/resp-xl.css">
+  <link rel="stylesheet" href="./css/resp-lg.css">
+  <link rel="stylesheet" href="./css/resp-md.css">
+  <link rel="stylesheet" href="/css/animation.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Righteous&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon" href="./assets/svg/favicon.svg" type="image/x-icon" />
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+  <title>Defendora</title>
+</head>
+
+<body id="overview-body" class="bg-black font-inter">
+
+  <div class="grid grid-cols-[repeat(100,minmax(0,1fr))] w-full min-h-dvh text-white max-xl:grid-cols-1">
+    <div id="sidebar"
+      class="col-span-17 flex flex-col justify-between border-r-1 h-screen border-[#1e1e1e] px-[24px] py-[32px] sticky left-0 top-0 max-xl:col-span-1 max-xl:w-full max-xl:h-fit max-xl:bg-black max-xl:border-b max-xl:border-white/15 z-100">
+      <div>
+        <div class="flex justify-between items-center">
+          <a href="/" class="font-montserrat text-[24px] font-semibold">Defendora</a>
+          <button onclick="toggleModal()" class="max-xl:flex hidden cursor-pointer">
+            <svg width="28" height="11" viewBox="0 0 28 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M26.8333 2.44444H1.16667C0.522668 2.44444 9.53674e-07 1.89689 9.53674e-07 1.22222C9.53674e-07 0.547556 0.522668 0 1.16667 0H14H26.8333C27.4773 0 28 0.547556 28 1.22222C28 1.89689 27.4773 2.44444 26.8333 2.44444ZM28 9.77778C28 9.10311 27.4773 8.55556 26.8333 8.55556H1.16667C0.522668 8.55556 9.53674e-07 9.10311 9.53674e-07 9.77778C9.53674e-07 10.4524 0.522668 11 1.16667 11H26.8333C27.4773 11 28 10.4524 28 9.77778Z"
+                fill="currentColor" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-col gap-[24px] mt-[64px] max-xl:hidden">
+          <a href="/overview.html" class="flex items-center gap-[12px]">
+            <i class='bx  bx-dashboard text-[24px]'></i>
+            <p class="font-semibold text-[20px]">Overview</p>
+          </a>
+          <a href="/subscription.html" class="flex items-center gap-[12px]">
+            <i class='bx  bx-receipt text-[24px]'></i>
+            <p class="font-semibold text-[20px]">Subscription</p>
+          </a>
+          <a href="/" class="flex items-center gap-[12px] border-t border-white/15 pt-[24px]">
+            <i class='bx  bx-home-alt-2 text-[24px]'></i>
+            <p class="font-semibold text-[20px]">Home</p>
+          </a>
+        </div>
+      </div>
+      <div class="flex flex-col gap-[24px] max-xl:hidden">
+        <a href="/overview.html" class="flex items-center gap-[12px]">
+          <i class='bx  bx-headphone-mic text-[24px]'></i>
+          <p class="font-semibold text-[20px]">Support</p>
+        </a>
+        <a href="/overview.html" class="flex items-center gap-[12px]">
+          <i class='bx  bx-door-open text-[24px]'></i>
+          <p class="font-semibold text-[20px]">Log Out</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- modal -->
+
+    <div id="nav-profile-modal" class="fixed w-full h-dvh z-20 bg-black/50 hidden">
+      <div id="nav-profile-wrapper"
+        class="fixed top-[64px] w-full h-fit bg-black border-b border-white/15 px-[20px] pt-[48px] pb-[24px] font-montserrat font-semibold text-[32px] overflow-hidden">
+        <div class="flex flex-col gap-[16px] mb-[16px]">
+          <a onclick="toggleModal()" href="/overview.html">Overview</a>
+          <a onclick="toggleModal()" href="/subscription.html">Subscription</a>
+        </div>
+        <div class="py-[40px] border-y border-white/15">
+          <a onclick="toggleModal()" href="/" class="">Home</a>
+        </div>
+        <div class="flex flex-col gap-[16px] mt-[16px]">
+          <a onclick="toggleModal()" href="/overview.html">Support</a>
+          <a onclick="toggleModal()" href="/subscription.html">Logout</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- end modal -->
+
+    <div id="overview-mid" class="col-span-30 px-[24px] py-[32px] text-center max-xl:col-span-1">
+      <p>Real-time protection</p>
+      <div class="mt-[100px] relative flex justify-center items-center">
+        <div class="overview-circle"></div>
+        <div class="overview-circle"></div>
+        <div class="overview-circle"></div>
+        <div class="w-[128px] h-[128px] bg-white rounded-[50%] z-2 flex justify-center items-center">
+          <svg width="64" height="64" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M25.3334 12.6667V11.0833C25.3334 7.58553 22.4978 4.75 19 4.75C15.5022 4.75 12.6667 7.58553 12.6667 11.0833V12.6667"
+              stroke="#CE1C1C" stroke-width="5.33333" stroke-linecap="round" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M6.14124 12.4746C4.75 13.8658 4.75 16.105 4.75 20.5833V22.1666C4.75 28.1377 4.75 31.1234 6.60499 32.9783C8.45999 34.8333 11.4455 34.8333 17.4167 34.8333H20.5833C26.5544 34.8333 29.5401 34.8333 31.395 32.9783C33.25 31.1234 33.25 28.1377 33.25 22.1666V20.5833C33.25 16.105 33.25 13.8658 31.8587 12.4746C30.4675 11.0833 28.2283 11.0833 23.75 11.0833H14.25C9.77165 11.0833 7.53249 11.0833 6.14124 12.4746ZM19 23.75C19.8745 23.75 20.5833 23.0411 20.5833 22.1666C20.5833 21.2922 19.8745 20.5833 19 20.5833C18.1255 20.5833 17.4167 21.2922 17.4167 22.1666C17.4167 23.0411 18.1255 23.75 19 23.75ZM23.75 22.1666C23.75 24.2348 22.4282 25.9944 20.5833 26.6464V30.0833H17.4167V26.6464C15.5718 25.9944 14.25 24.2348 14.25 22.1666C14.25 19.5432 16.3766 17.4166 19 17.4166C21.6234 17.4166 23.75 19.5432 23.75 22.1666Z"
+              fill="#CE1C1C" />
+          </svg>
+
+        </div>
+      </div>
+      <p class="mt-[108px] font-semibold text-[24px]">You're protected</p>
+      <p class="text-[#737373]">Check what you can do to get fully protected.</p>
+
+      <div
+        class="flex flex-col gap-[32px] mt-[32px] w-full bg-[#2c2c2c] px-[24px] py-[12px] border border-[#CE1C1C] rounded-[16px]">
+        <div class="flex flex-col text-left gap-[12px]">
+          <div class="flex justify-between items-center">
+            <p class="font-semibold text-[20px]">Secure VPN</p>
+            <button class="w-[73px] h-[34px] bg-gray-500 rounded-full relative px-[4px]">
+              <div class="w-[26px] h-[26px] bg-white rounded-full translate-x-[0%]"></div>
+            </button>
+          </div>
+          <div class="flex items-center gap-[12px]">
+            <i class='bx  bxs-globe-alt text-[36px] text-[#CE1C1C]'></i>
+            <div class="flex flex-col gap-[4px]">
+              <p class="font-semibold">Protection inactive</p>
+              <p>Your connection isn't secured</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-[32px] mt-[24px] w-full bg-[#2c2c2c] px-[24px] py-[12px] rounded-[16px]">
+        <div class="flex flex-col text-left gap-[12px]">
+          <div class="flex justify-between items-center">
+            <p class="font-semibold text-[20px]">Antivirus</p>
+            <button class="w-[73px] h-[34px] bg-[#CE1C1C] rounded-full relative px-[4px]">
+              <div class="w-[26px] h-[26px] bg-white rounded-full translate-x-[145%]"></div>
+            </button>
+          </div>
+          <div class="flex items-center gap-[12px]">
+            <i class='bx  bxs-virus-slash text-[36px]'></i>
+            <div class="flex flex-col gap-[4px]">
+              <p class="font-semibold">Protection active</p>
+              <p>Your device is secured</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-[32px] mt-[24px] w-full bg-[#2c2c2c] px-[24px] py-[12px] rounded-[16px]">
+        <div class="flex flex-col text-left gap-[12px]">
+          <div class="flex justify-between items-center">
+            <p class="font-semibold text-[20px]">Malware blocker</p>
+            <button class="w-[73px] h-[34px] bg-[#CE1C1C] rounded-full relative px-[4px]">
+              <div class="w-[26px] h-[26px] bg-white rounded-full translate-x-[145%]"></div>
+            </button>
+          </div>
+          <div class="flex items-center gap-[12px]">
+            <i class='bx  bxs-shield-half text-[36px]'></i>
+            <div class="flex flex-col gap-[4px]">
+              <p class="font-semibold">Protection active</p>
+              <p>Your device is secured</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div id="right" class="col-span-53 bg-[#1e1e1e] px-[24px] pt-[32px] pb-[16px] max-xl:col-span-1">
+      <p class="font-semibold text-[24px]">Automatic file scan</p>
+      <div class="mt-[48px] w-full bg-black px-[16px] py-[24px] flex justify-between items-center rounded-[16px]">
+        <p class="font-semibold text-[20px] flex gap-[24px]">Status <span class="text-[#737373] font-normal">:
+            active</span></p>
+        <button class="w-[73px] h-[34px] bg-[#CE1C1C] rounded-full relative px-[4px]">
+          <div class="w-[26px] h-[26px] bg-white rounded-full translate-x-[145%]"></div>
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-[16px] mt-[16px]">
+
+        <div
+          class="grid grid-cols-5 gap-[16px] max-md:grid-cols-1 max-md:gap-[0px] max-lg:grid-cols-5 max-xl:grid-cols-4">
+          <div class="col-span-3 max-lg:col-span-3 max-xl:col-span-2 max-md:w-full">
+            <p>Files scanned</p>
+            <div class="bg-black p-[16px] h-[356px] mt-[16px] rounded-[16px]">
+              <p>August</p>
+              <div
+                class="w-full h-[259px] grid grid-cols-14 max-2xl:grid-cols-12 gap-[16px] max-2xl:gap-[12px] items-end max-2xl:text-[14px]">
+                <div
+                  class="w-full rounded-full h-[65%] bg-white/25 flex items-end py-[12px] justify-center max-2xl:hidden">
+                  <p class="rotate-270 opacity-30">652</p>
+                </div>
+                <div
+                  class="w-full rounded-full h-[50%] bg-white/25 flex items-end py-[12px] justify-center max-2xl:hidden">
+                  <p class="rotate-270 opacity-30">591</p>
+                </div>
+                <div class="w-full rounded-full h-[75%] bg-white/25 flex items-end py-[12px] justify-center">
+                  <p class="rotate-270 opacity-30">766</p>
+                </div>
+                <div class="w-full rounded-full h-[25%] bg-white/25 flex items-end py-[12px] justify-center">
+                  <p class="rotate-270 opacity-30">210</p>
+                </div>
+                <div class="w-full rounded-full h-[55%] bg-white/25 flex items-end py-[12px] justify-center">
+                  <p class="rotate-270 opacity-30">645</p>
+                </div>
+                <div class="w-full rounded-full h-[85%] bg-white/25 flex items-end py-[12px] justify-center">
+                  <p class="rotate-270 opacity-30">872</p>
+                </div>
+                <div class="w-full rounded-full h-[65%] bg-white/25 flex items-end py-[12px] justify-center">
+                  <p class="rotate-270 opacity-30">749</p>
+                </div>
+                <div class="w-full rounded-full h-[45%] bg-white/25 flex items-end py-[12px] justify-center">
+                  <p class="rotate-270 opacity-30">553</p>
+                </div>
+                <div class="w-full rounded-full h-[95%] bg-white/25 flex items-end py-[12px] justify-center">
+                  <p class="rotate-270 opacity-30">940</p>
+                </div>
+                <div class="w-full rounded-full h-[70%] bg-white/25 flex items-end py-[12px] justify-center">
+                  <p class="rotate-270 opacity-30">788</p>
+                </div>
+                <div class="w-full rounded-full h-[32%] bg-white/25 flex items-end py-[12px] justify-center">
+                  <p class="rotate-270 opacity-30">493</p>
+                </div>
+                <div class="w-full rounded-full h-[45%] bg-white/25 flex items-end py-[12px] justify-center">
+                  <p class="rotate-270 opacity-30">551</p>
+                </div>
+                <div class="w-full rounded-full h-[85%] bg-white/25 flex items-end py-[12px] justify-center">
+                  <p class="rotate-270 opacity-30">864</p>
+                </div>
+                <div class="w-full rounded-full h-[75%] bg-[#CE1C1C] flex items-end py-[12px] justify-center">
+                  <p class="rotate-270 opacity-70">826</p>
+                </div>
+              </div>
+              <div
+                class="w-full grid grid-cols-14 max-2xl:grid-cols-12 gap-[16px] max-2xl:gap-[12px] text-center mt-[8px] text-white/30">
+                <span class="max-2xl:hidden">7</span>
+                <span class="max-2xl:hidden">8</span>
+                <span>9</span>
+                <span>10</span>
+                <span>11</span>
+                <span>12</span>
+                <span>13</span>
+                <span>14</span>
+                <span>15</span>
+                <span>16</span>
+                <span>17</span>
+                <span>18</span>
+                <span>19</span>
+                <span>20</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-2 max-md:w-full max-md:mt-[16px]">
+            <p>Devices</p>
+            <div class="w-full h-[356px] bg-black rounded-[16px] p-[16px] mt-[16px] overflow-y-auto">
+              <div class="flex items-center gap-[12px]">
+                <img src="./assets/svg/deviceProtect.svg" alt="device">
+                <div class="flex flex-col gap-[4px]">
+                  <p class="text-[20px font-semibold]">Devices protected</p>
+                  <p class="text-[#bebebe]">All devices protected</p>
+                </div>
+              </div>
+              <div class="flex mt-[32px] gap-[12px]">
+                <i class='bx  bx-laptop-alt text-[24px]'></i>
+                <div class="flex flex-col gap-[4px]">
+                  <p class="font-semibold">MacOs</p>
+                  <p>Last active <span class="text-[#737373]">: 2 minutes ago.</span></p>
+                  <span class="py-[4px] px-[16px] mt-[8px] bg-[#198754]/25 text-[#22C55E] w-fit rounded-full">
+                    Protected
+                  </span>
+                </div>
+              </div>
+              <div class="flex mt-[32px] gap-[12px]">
+                <i class='bx  bx-laptop-alt text-[24px]'></i>
+                <div class="flex flex-col gap-[4px]">
+                  <p class="font-semibold">MacOs</p>
+                  <p>Last active <span class="text-[#737373]">: 2 minutes ago.</span></p>
+                  <span class="py-[4px] px-[16px] mt-[8px] bg-[#198754]/25 text-[#22C55E] w-fit rounded-full">
+                    Protected
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p>Qauarantine and removal</p>
+
+        <div class="w-full p-[16px] rounded-[16px] bg-black min-h-[248px]">
+          <div class="flex justify-between items-center py-[8px] border-b border-white/15">
+            <div class="flex gap-[16px] items-center">
+              <img src="./assets/svg/warning.svg" alt="warning" width="36px"">
+              <p class=" font-semibold">R.779-VirW7.ware.init</p>
+            </div>
+            <button class="px-[16px] py-[4px] bg-[#CE1C1C]/40 rounded-[8px]">Remove</button>
+          </div>
+          <div class="flex justify-between items-center py-[8px] border-b border-white/15">
+            <div class="flex gap-[16px] items-center">
+              <img src="./assets/svg/warning.svg" alt="warning" width="36px"">
+              <p class=" font-semibold">R.779-VirW7.ware.init</p>
+            </div>
+            <button class="px-[16px] py-[4px] bg-[#CE1C1C]/40 rounded-[8px]">Remove</button>
+          </div>
+          <div class="flex justify-between items-center py-[8px] border-b border-white/15">
+            <div class="flex gap-[16px] items-center">
+              <img src="./assets/svg/warning.svg" alt="warning" width="36px"">
+              <p class=" font-semibold">R.779-VirW7.ware.init</p>
+            </div>
+            <button class="px-[16px] py-[4px] bg-[#CE1C1C]/40 rounded-[8px]">Remove</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="./js/overview.js"></script>
+</body>
+
+</html>

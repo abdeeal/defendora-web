@@ -1,0 +1,9 @@
+@media (width < 96rem) {
+  .navbar {
+    padding: 24px 0px;
+  }
+
+  .navbar-wrapper {
+    padding: 16px 64px;
+  }
+}

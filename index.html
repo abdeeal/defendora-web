@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="./lib/owlCarousel/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="./lib/owlCarousel/dist/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/resp-2xl.css">
+  <link rel="stylesheet" href="./css/resp-xl.css">
+  <link rel="stylesheet" href="./css/resp-lg.css">
+  <link rel="stylesheet" href="./css/resp-md.css">
+  <link rel="stylesheet" href="/css/animation.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Righteous&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon" href="./assets/svg/favicon.svg" type="image/x-icon">
+
+  <title>Defendora</title>
+</head>
+
+<body class="relative bg-black">
+
+  <nav id="navbar" class="navbar font-montserrat">
+    <div class="navbar-wrapper">
+      <div id="nav-left-items" class="nav-left-items">
+        <h2 id="defendora" class="defendora">DEFENDORA</h2>
+        <div class="nav-items">
+          <a href="/">Home</a>
+          <a href="#light-section">Facts</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+      </div>
+      <div id="nav-right-items" class="nav-right-items">
+        <a href="/auth.html?s=reg">Register</a>
+        <a href="/auth.html" class="btn-login">Login</a>
+      </div>
+      <button type="button" onclick="toggleModal()" id="burger-btn" class="btn-burger">
+        <svg width="28" height="11" viewBox="0 0 28 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="burger-icon"
+            d="M26.8333 2.44444H1.16667C0.522668 2.44444 9.53674e-07 1.89689 9.53674e-07 1.22222C9.53674e-07 0.547556 0.522668 0 1.16667 0H14H26.8333C27.4773 0 28 0.547556 28 1.22222C28 1.89689 27.4773 2.44444 26.8333 2.44444ZM28 9.77778C28 9.10311 27.4773 8.55556 26.8333 8.55556H1.16667C0.522668 8.55556 9.53674e-07 9.10311 9.53674e-07 9.77778C9.53674e-07 10.4524 0.522668 11 1.16667 11H26.8333C27.4773 11 28 10.4524 28 9.77778Z"
+            fill="black" />
+        </svg>
+
+      </button>
+    </div>
+  </nav>
+
+  <div id="nav-modal" class="hidden text-white inset-0 w-full h-fit fixed z-1 flex justify-center p-[12px]">
+    <div id="nav-wrapper" class="bg-white/20 w-full backdrop-blur-md rounded-[16px] px-[16px] pt-[76px] py-[40px] max-md:pt-[64px] origin-top h-[0] overflow-hidden">
+      <div class="flex flex-col gap-[16px] pt-[48px] px-[8px] font-montserrat text-[32px] font-semibold border-t border-current/15">
+        <a href="/">Home</a>
+        <a href="#light-section" onclick="toggleModal()">Facts</a>
+        <a href="#pricing" onclick="toggleModal()">Pricing</a>
+        <a href="/auth.html?s=reg" class="mt-[24px] border-t border-current/15 pt-[16px]">Register</a>
+        <a href="/auth.html">Login</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="scroll-container" class="w-full min-h-dvh overflow-hidden relative bg-black text-white relative">
+    <div class="w-full h-full z-0 absolute overflow-hidden">
+      <canvas id="canvas"></canvas>
+      <div id="red-bubble"
+        class="w-full aspect-square bg-[radial-gradient(closest-side,#861717,#000)] -right-[35%] -top-[40%] absolute z-0 max-xl:w-[300%] max-md:right-[-140%] max-md:top-[08%] max-xl:right-[-150%] max-xl:top-[-35%] -z-1">
+      </div>
+    </div>
+
+    <div id="section-wrapper" class="flex h-full max-md:gap-[156px] max-lg:gap-[256px] max-xl:gap-[100px]">
+
+      <section id="home"
+        class="pt-[224px] pl-[164px] z-2 relative flex flex-col justify-between h-dvh font-inter  flex-shrink-0 w-dvw max-md:pt-[140px] max-md:pl-[30px] max-xl:pt-[200px] max-xl:pl-[64px] max-lg:pt-[168px] max-2xl:pt-[164px]">
+      </section>
+
+
+      <section id="features"
+        class="pt-[162px] z-2 relative flex flex-col gap-[2%] items-center h-dvh font-inter flex-shrink-0 min-w-[50%] max-md:pt-[108px] max-lg:pt-[148px] max-md:gap-[0%] max-lg:gap-[15%] max-xl:pt-[220px] max-xl:gap-[20%] max-2xl:gap-[2%] max-2xl:pt-[140px] max-md:w-[523px] max-xl:min-w-[100%] max-2xl:min-w-[75%]">
+      </section>
+
+
+      <section id="facts"
+        class="pt-[162px] z-2 relative flex flex-col gap-[8%] items-center h-dvh font-inter flex-shrink-0 min-w-[100%] max-md:pt-[108px] max-lg:px-[32px] max-lg:pt-[148px] max-md:gap-[10%] max-lg:gap-[10%] max-xl:pt-[220px] max-xl:gap-[20%] max-md:w-[744px] max-lg:w-[1024px] max-2xl:gap-[2%] max-2xl:pt-[140px]">
+      </section>
+    </div>
+  </div>
+
+  <section id="light-section"
+    class="min-w-full max-w-full overflow-x-hidden pt-[180px] flex flex-col items-center font-inter max-md:pt-[125px]"
+    style="background-color: #fafafa;">
+  </section>
+
+  <section id="threats" class="min-w-full max-w-full overflow-x-hidden pt-[64px] flex flex-col items-center font-inter"
+    style="background-color: #fafafa;">
+  </section>
+
+  <section id="pricing" class="min-w-full max-w-full pt-[64px] flex flex-col items-center font-inter max-md:pt-[64px]"
+    style="background-color: #fafafa;">
+  </section>
+
+  <div id="stage">
+    <div id="top-section" class="band"></div>
+    <div id="bottom-section" class="band"></div>
+    <h2 class="font-semibold text-[48px] text-center max-md:text-[24px]">Evolving protection <br>with <span
+        class="text-primary">Defendora</span></h2>
+  </div>
+
+  <footer
+    class="min-w-full max-w-full overflow-x-hidden pt-[64px] flex flex-col items-center font-inter text-white pb-[24px]"
+    style="background-color: #fafafa;">
+    <div
+      class="w-[70%] min-h-[120px] rounded-[64px] p-[64px] max-xl:w-[80%] max-2xl:w-[75%] max-md:p-[24px] max-md:rounded-[16px]"
+      style="background-color: #6F0E05;">
+      <div class="grid grid-cols-3 pb-[24px] max-xl:grid-cols-1 max-xl:gap-[48px]">
+        <div
+          class="col-span-2 flex flex-col justify-between gap-[48px] max-xl:flex-row max-xl:col-span-1 max-md:gap-[40px]">
+          <p class="font-montserrat font-semibold text-[24px] max-md:text-[16px]">Defendora</p>
+          <p class="text-[20px] leading-[98%] tracking-[-0.01rem] max-xl:leading-[100%] max-md:text-[12px]">A New Era of
+            Cyber <br class="hidden max-xl:flex">Defense for <br class="max-xl:hidden">a Safer and
+            <br class="hidden max-xl:flex"> Smarter Digital <br class="max-xl:hidden">Future.
+          </p>
+          <div class="flex gap-[16px] max-xl:hidden">
+            <a href="#"><img src="./assets/svg/x.svg" alt="x"></a>
+            <a href="#"><img src="./assets/svg/instagram.svg" alt="instagram"></a>
+            <a href="#"><img src="./assets/svg/linkedin.svg" alt="linkedin"></a>
+            <a href="#"><img src="./assets/svg/facebook.svg" alt="facebook"></a>
+          </div>
+        </div>
+        <div class="w-full flex justify-between gap-[32px] text-[20px] max-md:text-[12px]">
+          <div class="flex flex-col gap-[24px] max-md:gap-[12px]">
+            <p class="font-semibold">Home</p>
+            <div class="flex flex-col gap-[8px]">
+              <a href="/">Home</a>
+              <a href="#light-section">Facts</a>
+              <a href="#pricing">Pricing</a>
+            </div>
+          </div>
+          <div class="flex flex-col gap-[24px] max-md:gap-[12px]">
+            <p class="font-semibold">Auth</p>
+            <div class="flex flex-col gap-[8px]">
+              <a href="/auth.html">Login</a>
+              <a href="/auth.html?s=reg">Register</a>
+            </div>
+          </div>
+          <div class="flex flex-col gap-[24px] max-md:gap-[12px]">
+            <p class="font-semibold">Profile</p>
+            <div class="flex flex-col gap-[8px]">
+              <a href="#">Dashboard</a>
+              <a href="#">Plans</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="hidden gap-[16px] max-xl:flex">
+            <a href="#"><img src="./assets/svg/x.svg" class="max-md:w-[20px] max-xl:w-[32px]" alt="x"></a>
+            <a href="#"><img src="./assets/svg/instagram.svg" class="max-md:w-[20px] max-xl:w-[32px]"
+                alt="instagram"></a>
+            <a href="#"><img src="./assets/svg/linkedin.svg" class="max-md:w-[20px] max-xl:w-[32px]" alt="linkedin"></a>
+            <a href="#"><img src="./assets/svg/facebook.svg" class="max-md:w-[20px] max-xl:w-[32px]" alt="facebook"></a>
+          </div>
+        </div>
+      </div>
+      <p class="border-t border-white/50 pt-[16px] max-md:text-[12px]">© 2025 Defendora. All rights reserved</p>
+    </div>
+  </footer>
+
+  <div class="relative w-full h-[120px] overflow-hidden" style="background-color: #fafafa;">
+    <p
+      class="text-center font-bold text-[240px] absolute left-[50%] -translate-x-[50%] top-[-97%] gradient-text max-xl:text-[160px] max-xl:top-[-35%] max-2xl:text-[230px] max-2xl:top-[-88%]">
+      Defendora</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="./lib/owlCarousel/dist/owl.carousel.min.js"></script>
+
+  <script src="./js/animation.js"></script>
+  <script src="./lib/gsap/gsap.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="/js/owlCarousel.js"></script>
+</body>
+
+</html>
