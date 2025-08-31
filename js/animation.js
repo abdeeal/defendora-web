@@ -10,10 +10,8 @@
     if (window.matchMedia("(max-width: 768px)").matches) {
       START_SIZE = 20;
     } else if (window.matchMedia("(max-width: 1024px)").matches) {
-      console.log("Viewport ≤ 1024px");
       START_SIZE = 32;
     } else {
-      console.log("Viewport > 1024px");
       START_SIZE = 40;
     }
   }

@@ -69,6 +69,8 @@ function toggleModal() {
   }
 }
 
+console.warn = () => {};
+
 navOverlay.addEventListener("click", (e) => {
   if (navModal && !navModalWrapper.contains(e.target)) {
     toggleModal();

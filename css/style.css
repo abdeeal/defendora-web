@@ -8,6 +8,10 @@
 
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* navbar css */
 
 .navbar {
@@ -78,9 +82,11 @@
   overflow: hidden;
 }
 
-.nav-items a:hover {
+.navbar .navbar-wrapper .nav-left-items .nav-items a:hover {
   color: #fff
 }
+
+
 
 .nav-right-items {
   display: flex;
@@ -88,7 +94,7 @@
   align-items: center;
 }
 
-.nav-right-items a:hover {
+.navbar .navbar-wrapper .nav-right-items a:hover {
   color: #fff
 }
 
