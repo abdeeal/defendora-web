@@ -12,11 +12,11 @@ function toggleModal() {
 
     navProfileWrapper.style.height = "0px";
     gsap.to(navProfileWrapper, {
-      height: "459px",
+      height: "400px",
       duration: 0.5,
       ease: "power2.out",
       onComplete: () => {
-        navProfileWrapper.style.height = "459px";
+        navProfileWrapper.style.height = "400px";
       },
     });
 
@@ -104,4 +104,20 @@ function preview() {
     },
     ">"
   ); // animasi fadeOut setelah progress habis
+}
+
+function logout() {
+  document.querySelector(".hide-loader").classList.remove("hide-loader");
+  setTimeout(() => {
+    loader.classList.add("fade-out");
+    document.body.style.overflow = "hidden";
+
+    setTimeout(() => {
+      loader.style.display = "none";
+      document.body.style.overflow = "";
+
+      localStorage.removeItem("login");
+      window.location.href = "/";
+    }, 600);
+  }, 3000);
 }

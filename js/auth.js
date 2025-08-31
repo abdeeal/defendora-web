@@ -1,7 +1,7 @@
 function initParticleCanvas(containerSelector, canvasId) {
   const container = document.querySelector(containerSelector);
   const canvas = document.getElementById(canvasId);
-  if (!container || !canvas) return; // safety check
+  if (!container || !canvas) return;
 
   const ctx = canvas.getContext("2d");
   canvas.width = container.getBoundingClientRect().width;
@@ -63,7 +63,6 @@ function initParticleCanvas(containerSelector, canvasId) {
   animate();
 }
 
-// panggil untuk dua canvas berbeda
 initParticleCanvas(".side-auth", "canvasRight");
 initParticleCanvas(".side-auth-mobile", "canvas-mobile");
 
@@ -196,15 +195,12 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    // animasi keluar dulu
-    tl.to(fromEl, { x: fromEndX, opacity: 0 })
-      // baru animasi masuk
-      .fromTo(
-        toEl,
-        { x: toStartX, opacity: 0 },
-        { x: "0%", opacity: 1 },
-        "0.4"
-      );
+    tl.to(fromEl, { x: fromEndX, opacity: 0 }).fromTo(
+      toEl,
+      { x: toStartX, opacity: 0 },
+      { x: "0%", opacity: 1 },
+      "0.4"
+    );
   }
 
   if (goRegister) {
@@ -251,10 +247,15 @@ function login() {
   }
 }
 
-function gLogin() {
+function gLogin(e) {
   loading(3000);
-  localStorage.setItem("login", "John Doe");
-  window.location.href = "overview.html";
+  setTimeout(() => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    localStorage.setItem("login", "John Doe");
+    window.location.href = "overview.html";
+  }, 2000);
 }
 
 function register() {

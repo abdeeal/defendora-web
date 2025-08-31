@@ -33,6 +33,14 @@
   left: 0;
   z-index: 100;
   box-sizing: border-box;
+  color: #aaaaaa;
+}
+
+.df-link.active {
+  padding: 8px;
+  background-color: #232323;
+  border-radius: 12px;
+  color: white;
 }
 
 .df-header {

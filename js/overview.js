@@ -12,11 +12,11 @@ function toggleModal() {
 
     navProfileWrapper.style.height = "0px";
     gsap.to(navProfileWrapper, {
-      height: "459px",
+      height: "400px",
       duration: 0.5,
       ease: "power2.out",
       onComplete: () => {
-        navProfileWrapper.style.height = "459px";
+        navProfileWrapper.style.height = "400px";
       },
     });
 
