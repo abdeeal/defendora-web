@@ -976,7 +976,7 @@
   color: #DE1B0A;
 }
 
-.price-text .ultimate{
+.price-text.ultimate{
   z-index: 1;
 }
 
