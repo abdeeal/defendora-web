@@ -11,6 +11,367 @@
     padding: 0px;
   }
 
+  #nav-wrapper {
+    padding-top: 64px;
+  }
+
+  /* nav end */
+
+  /* container */
+  #red-bubble {
+    width: 300%;
+    right: -140%;
+    top: 8%;
+  }
+
+  #section-wrapper {
+    gap: 156px
+  }
+
+  /* home */
+  .home {
+    padding-top: 140px;
+    padding-left: 30px;
+  }
+
+  .lock-img {
+    right: -40%;
+    bottom: 10%;
+    width: 90%;
+  }
+
+  .hero-content {
+    gap: 32px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-text,
+  .tagline {
+    font-size: 12px;
+  }
+
+  .cta-wrapper {
+    font-size: 12px;
+    gap: 20px;
+    padding: 6px 8px 6px 16px;
+    border-radius: 8px;
+  }
+
+  .cta-btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+  }
+
+  /* features */
+  .features {
+    padding-top: 108px;
+    gap: 0%;
+    width: 523px;
+  }
+
+  .features-title {
+    font-size: 16px;
+    padding: 0 30px;
+    max-width: 375px;
+  }
+
+  #circle-way {
+    font-size: 12px;
+  }
+
+  .puzzle-img {
+    width: 122px;
+  }
+
+  .circle-way-img {
+    transform: scale(0.75);
+  }
+
+  #orbit-1 {
+    width: 205px;
+  }
+
+  #orbit-1 .orbit-text {
+    width: 90px;
+  }
+
+  #orbit-2 {
+    width: 200px;
+  }
+
+  #orbit-2 .orbit-item {
+    bottom: 105%;
+    transform: translateX(175px);
+  }
+
+  #orbit-2 .orbit-text {
+    width: 90px;
+  }
+
+  #orbit-3 {
+    width: 417px;
+  }
+
+  #orbit-3 .orbit-item {
+    right: 86%;
+    bottom: 93%;
+  }
+
+  #orbit-3 .orbit-text {
+    width: 90px;
+    top: -8px;
+  }
+
+  #orbit-4 {
+    width: 380px;
+  }
+
+  #orbit-4 .orbit-item {
+    bottom: -1%;
+    right: 60%;
+  }
+
+  #orbit-4 .orbit-text {
+    width: 90px;
+  }
+
+
+  /* facts */
+  .facts {
+    padding-top: 108px;
+    gap: 10%;
+    width: 744px;
+  }
+
+  .protections-text {
+    font-size: 16px;
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 390px;
+  }
+
+  .protections-grid {
+    gap: 24px;
+  }
+
+  .protection-card {
+    width: 328px;
+    height: 216px;
+    padding: 24px;
+  }
+
+  .protection-card h3 {
+    font-size: 20px;
+  }
+
+  .protection-card p {
+    font-size: 12px;
+  }
+
+  /* light section */
+  .section-light {
+    padding-top: 125px;
+  }
+
+  .section-pricing {
+    padding-top: 64px;
+  }
+
+  .heading-threats {
+    font-size: 20px;
+  }
+
+  /* bubble */
+  #ransomware-bubble {
+    width: 192px;
+    height: 52px;
+    top: 10%;
+    right: 25%;
+  }
+
+  #cyberattacks-bubble {
+    width: 232px;
+    height: 52px;
+    top: 25%;
+    right: 42%;
+  }
+
+  .ransomware-icon,
+  .cyber-icon {
+    width: 32px;
+  }
+
+  .bubble-title {
+    font-size: 12px;
+  }
+
+  .bubble-text span {
+    font-size: 10px;
+  }
+
+  #stolendata-bubble {
+    width: 192px;
+    height: 52px;
+    top: 55%;
+    right: 27%;
+  }
+
+  #tracking-bubble {
+    width: 232px;
+    height: 52px;
+    top: 85%;
+    right: 35%;
+  }
+
+  #stolendata-bubble img,
+  #tracking-bubble img {
+    width: 32px;
+  }
+
+  #stolendata-bubble p,
+  #tracking-bubble p {
+    font-size: 12px;
+  }
+
+  #stolendata-bubble span,
+  #tracking-bubble span {
+    font-size: 10px;
+  }
+
+  .virus-bg {
+    width: 716px
+  }
+
+  /* threats */
+  .modern-heading {
+    font-size: 20px;
+  }
+
+  .modern-paragraph {
+    font-size: 12px;
+    width: 80%;
+    margin: 12px auto 32px auto;
+  }
+
+
+  .modern-paragraph br {
+    display: none;
+  }
+
+  .threats-mobile-wrapper {
+    display: flex;
+    height: 420px;
+  }
+
+  .threats-mobile-card {
+    width: 85%;
+    padding: 24px 16px;
+  }
+
+  .threats-mobile-title {
+    font-size: 16px;
+    padding-bottom: 12px;
+  }
+
+  .threats-container-mobile {
+    gap: 8px
+  }
+
+  .threats-container-mobile div {
+    font-size: 12px
+  }
+
+  .threats-footer {
+    font-size: 12px;
+  }
+
+  /* pricing */
+  .heading-plan {
+    font-size: 20px;
+  }
+
+  .scroll-pricing {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .pricing-card {
+    width: 820px;
+    gap: 20px;
+  }
+
+  .feature-box {
+    font-size: 16px;
+  }
+
+  .plan-title {
+    font-size: 20px;
+  }
+
+  .price-text {
+    font-size: 20px;
+  }
+
+  .price-button {
+    font-size: 16px;
+  }
+
+  .icon-pricing a {
+    padding: 16px;
+  }
+
+  .scroll-sideways {
+    font-size: 14px;
+  }
+
+  #stage h2 {
+    font-size: 24px;
+  }
+
+  /* footer */
+  .footer-container {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .footer-left {
+    gap: 16px;
+    height: 24px !important;
+  }
+
+  .footer-left p:nth-child(1) {
+    font-size: 16px;
+  }
+
+  .footer-left p {
+    font-size: 12px;
+  }
+
+  .hero-text-footer {
+    font-size: 12px;
+  }
+
+  .footer-links {
+    font-size: 12px;
+  }
+
+  .footer-col {
+    gap: 12px;
+  }
+
+  .social-links-alt a img {
+    width: 20px;
+  }
+
+  .footer-copy {
+    font-size: 12px;
+  }
+
+
+  /* carousel */
   .owl-stage-outer {
     padding-bottom: 20px;
   }
@@ -24,8 +385,90 @@
     align-items: center;
   }
 
-  #form-register, #form-login {
-    top: 3% !important
+  /* ============= AUTH ============ */
+
+  #brand-auth {
+    margin: 24px 24px;
+  }
+
+  #form-register,
+  #form-login {
+    top: 3% !important;
+    gap: 16px;
+  }
+
+  .inner-box {
+    top: 80px;
+    display: none;
+  }
+
+  .inner-box p:nth-child(1) {
+    font-size: 20px;
+  }
+
+  .inner-box p:nth-child(2) {
+    font-size: 12px;
+  }
+
+  .form-title {
+    font-size: 20px;
+  }
+
+  .input-auth {
+    width: 308px;
+  }
+
+  .btn-auth {
+    width: 308px;
+  }
+
+  .btn-google {
+    width: 308px;
+  }
+
+  .text-info {
+    font-size: 14px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* == Over view */
+
+  .df-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .df-box-left {
+    width: 100%;
+  }
+
+  .devices-container {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .plans-wrapper {
+    width: 100%;
+    transform: translateX(0);
+  }
+
+  .plan-btn {
+    padding: 20px 64px;
+  }
+
+  .ultimate-btn {
+    padding: 20px 64px;
+  }
+
+  .transaction-mobile,
+  .transaction-details,
+  .transaction-header,
+  .transaction-icon,
+  .date-value,
+  .detail-value {
+    font-size: 14px;
   }
 
 }

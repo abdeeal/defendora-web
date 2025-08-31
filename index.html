@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <link rel="stylesheet" href="./css/preflight.css">
   <link rel="stylesheet" href="./lib/owlCarousel/dist/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="./lib/owlCarousel/dist/assets/owl.theme.default.min.css">
   <link rel="stylesheet" href="./css/style.css">
@@ -26,21 +26,21 @@
   <title>Defendora</title>
 </head>
 
-<body class="relative bg-black">
+<body id="index-body">
 
   <nav id="navbar" class="navbar font-montserrat">
     <div class="navbar-wrapper">
       <div id="nav-left-items" class="nav-left-items">
         <h2 id="defendora" class="defendora">DEFENDORA</h2>
         <div class="nav-items">
-          <a href="/">Home</a>
-          <a href="#light-section">Facts</a>
-          <a href="#pricing">Pricing</a>
+          <a id="links-home" href="/">Home</a>
+          <a id="links-facts" href="#light-section">Facts</a>
+          <a id="links-pricing" href="#pricing">Pricing</a>
         </div>
       </div>
       <div id="nav-right-items" class="nav-right-items">
-        <a href="/auth.html?s=reg">Register</a>
-        <a href="/auth.html" class="btn-login">Login</a>
+        <a id="links-reg" href="/auth.html?s=reg">Register</a>
+        <a id="links-login" href="/auth.html" class="btn-login">Login</a>
       </div>
       <button type="button" onclick="toggleModal()" id="burger-btn" class="btn-burger">
         <svg width="28" height="11" viewBox="0 0 28 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,132 +53,125 @@
     </div>
   </nav>
 
-  <div id="nav-modal" class="hidden text-white inset-0 w-full h-fit fixed z-1 flex justify-center p-[12px]">
-    <div id="nav-wrapper" class="bg-white/20 w-full backdrop-blur-md rounded-[16px] px-[16px] pt-[76px] py-[40px] max-md:pt-[64px] origin-top h-[0] overflow-hidden">
-      <div class="flex flex-col gap-[16px] pt-[48px] px-[8px] font-montserrat text-[32px] font-semibold border-t border-current/15">
+  <div id="nav-modal">
+    <div id="nav-wrapper">
+      <div class="nav-links">
         <a href="/">Home</a>
         <a href="#light-section" onclick="toggleModal()">Facts</a>
         <a href="#pricing" onclick="toggleModal()">Pricing</a>
-        <a href="/auth.html?s=reg" class="mt-[24px] border-t border-current/15 pt-[16px]">Register</a>
+        <a href="/auth.html?s=reg" id="register-link" class="register-link">Register</a>
         <a href="/auth.html">Login</a>
       </div>
     </div>
   </div>
 
 
-  <div id="scroll-container" class="w-full min-h-dvh overflow-hidden relative bg-black text-white relative">
-    <div class="w-full h-full z-0 absolute overflow-hidden">
+
+  <div id="scroll-container">
+    <div class="canvas-container">
       <canvas id="canvas"></canvas>
-      <div id="red-bubble"
-        class="w-full aspect-square bg-[radial-gradient(closest-side,#861717,#000)] -right-[35%] -top-[40%] absolute z-0 max-xl:w-[300%] max-md:right-[-140%] max-md:top-[08%] max-xl:right-[-150%] max-xl:top-[-35%] -z-1">
+      <div id="red-bubble"></div>
+    </div>
+
+    <div id="section-wrapper">
+
+      <section id="home" class="home"></section>
+      <section id="features" class="features"></section>
+      <section id="facts" class="facts"></section>
+
+    </div>
+  </div>
+
+  <div class="light-wrapper">
+    <section id="light-section" class="section-light">
+    </section>
+
+    <section id="threats" class="section-threats">
+    </section>
+
+    <section id="pricing" class="section-pricing">
+    </section>
+    <div id="stage">
+      <div id="top-section" class="band"></div>
+      <div id="bottom-section" class="band"></div>
+      <h2 class="evolve-text">Evolving protection <br>with <span>Defendora</span></h2>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-left">
+            <p>Defendora</p>
+            <p class="hero-text-footer">
+              A New Era of Cyber
+              <br class="br-xl">Defense for
+              <br class="br-hide">a Safer and
+              <br class="br-xl">Smarter Digital
+              <br class="br-hide">Future.
+            </p>
+
+            <div class="social-links">
+              <a href="#"><img src="./assets/svg/x.svg" alt="x"></a>
+              <a href="#"><img src="./assets/svg/instagram.svg" alt="instagram"></a>
+              <a href="#"><img src="./assets/svg/linkedin.svg" alt="linkedin"></a>
+              <a href="#"><img src="./assets/svg/facebook.svg" alt="facebook"></a>
+            </div>
+
+          </div>
+          <div class="footer-links">
+            <div class="footer-col">
+              <p class="col-title">Home</p>
+              <div class="col-items">
+                <a href="/">Home</a>
+                <a href="#light-section">Facts</a>
+                <a href="#pricing">Pricing</a>
+              </div>
+            </div>
+
+            <div class="footer-col">
+              <p class="col-title">Auth</p>
+              <div class="col-items">
+                <a href="/auth.html">Login</a>
+                <a href="/auth.html?s=reg">Register</a>
+              </div>
+            </div>
+
+            <div class="footer-col">
+              <p class="col-title">Profile</p>
+              <div class="col-items">
+                <a href="/overview.html">Overview</a>
+                <a href="/subscription.html">Subscription</a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="social-links-alt">
+              <a href="https://x.com"><img src="./assets/svg/x.svg" class="social-icon" alt="x"></a>
+              <a href="https://instagram.com"><img src="./assets/svg/instagram.svg" class="social-icon"
+                  alt="instagram"></a>
+              <a href="https://linkedin.com"><img src="./assets/svg/linkedin.svg" class="social-icon"
+                  alt="linkedin"></a>
+              <a href="https://facebook.com"><img src="./assets/svg/facebook.svg" class="social-icon"
+                  alt="facebook"></a>
+            </div>
+          </div>
+
+        </div>
+        <p class="footer-copy">© 2025 Defendora. All rights reserved</p>
+
       </div>
-    </div>
+    </footer>
 
-    <div id="section-wrapper" class="flex h-full max-md:gap-[156px] max-lg:gap-[256px] max-xl:gap-[100px]">
-
-      <section id="home"
-        class="pt-[224px] pl-[164px] z-2 relative flex flex-col justify-between h-dvh font-inter  flex-shrink-0 w-dvw max-md:pt-[140px] max-md:pl-[30px] max-xl:pt-[200px] max-xl:pl-[64px] max-lg:pt-[168px] max-2xl:pt-[164px]">
-      </section>
-
-
-      <section id="features"
-        class="pt-[162px] z-2 relative flex flex-col gap-[2%] items-center h-dvh font-inter flex-shrink-0 min-w-[50%] max-md:pt-[108px] max-lg:pt-[148px] max-md:gap-[0%] max-lg:gap-[15%] max-xl:pt-[220px] max-xl:gap-[20%] max-2xl:gap-[2%] max-2xl:pt-[140px] max-md:w-[523px] max-xl:min-w-[100%] max-2xl:min-w-[75%]">
-      </section>
-
-
-      <section id="facts"
-        class="pt-[162px] z-2 relative flex flex-col gap-[8%] items-center h-dvh font-inter flex-shrink-0 min-w-[100%] max-md:pt-[108px] max-lg:px-[32px] max-lg:pt-[148px] max-md:gap-[10%] max-lg:gap-[10%] max-xl:pt-[220px] max-xl:gap-[20%] max-md:w-[744px] max-lg:w-[1024px] max-2xl:gap-[2%] max-2xl:pt-[140px]">
-      </section>
+    <div class="hero-banner">
+      <p class="ov-title gradient-text">Defendora</p>
     </div>
   </div>
 
-  <section id="light-section"
-    class="min-w-full max-w-full overflow-x-hidden pt-[180px] flex flex-col items-center font-inter max-md:pt-[125px]"
-    style="background-color: #fafafa;">
-  </section>
-
-  <section id="threats" class="min-w-full max-w-full overflow-x-hidden pt-[64px] flex flex-col items-center font-inter"
-    style="background-color: #fafafa;">
-  </section>
-
-  <section id="pricing" class="min-w-full max-w-full pt-[64px] flex flex-col items-center font-inter max-md:pt-[64px]"
-    style="background-color: #fafafa;">
-  </section>
-
-  <div id="stage">
-    <div id="top-section" class="band"></div>
-    <div id="bottom-section" class="band"></div>
-    <h2 class="font-semibold text-[48px] text-center max-md:text-[24px]">Evolving protection <br>with <span
-        class="text-primary">Defendora</span></h2>
-  </div>
-
-  <footer
-    class="min-w-full max-w-full overflow-x-hidden pt-[64px] flex flex-col items-center font-inter text-white pb-[24px]"
-    style="background-color: #fafafa;">
-    <div
-      class="w-[70%] min-h-[120px] rounded-[64px] p-[64px] max-xl:w-[80%] max-2xl:w-[75%] max-md:p-[24px] max-md:rounded-[16px]"
-      style="background-color: #6F0E05;">
-      <div class="grid grid-cols-3 pb-[24px] max-xl:grid-cols-1 max-xl:gap-[48px]">
-        <div
-          class="col-span-2 flex flex-col justify-between gap-[48px] max-xl:flex-row max-xl:col-span-1 max-md:gap-[40px]">
-          <p class="font-montserrat font-semibold text-[24px] max-md:text-[16px]">Defendora</p>
-          <p class="text-[20px] leading-[98%] tracking-[-0.01rem] max-xl:leading-[100%] max-md:text-[12px]">A New Era of
-            Cyber <br class="hidden max-xl:flex">Defense for <br class="max-xl:hidden">a Safer and
-            <br class="hidden max-xl:flex"> Smarter Digital <br class="max-xl:hidden">Future.
-          </p>
-          <div class="flex gap-[16px] max-xl:hidden">
-            <a href="#"><img src="./assets/svg/x.svg" alt="x"></a>
-            <a href="#"><img src="./assets/svg/instagram.svg" alt="instagram"></a>
-            <a href="#"><img src="./assets/svg/linkedin.svg" alt="linkedin"></a>
-            <a href="#"><img src="./assets/svg/facebook.svg" alt="facebook"></a>
-          </div>
-        </div>
-        <div class="w-full flex justify-between gap-[32px] text-[20px] max-md:text-[12px]">
-          <div class="flex flex-col gap-[24px] max-md:gap-[12px]">
-            <p class="font-semibold">Home</p>
-            <div class="flex flex-col gap-[8px]">
-              <a href="/">Home</a>
-              <a href="#light-section">Facts</a>
-              <a href="#pricing">Pricing</a>
-            </div>
-          </div>
-          <div class="flex flex-col gap-[24px] max-md:gap-[12px]">
-            <p class="font-semibold">Auth</p>
-            <div class="flex flex-col gap-[8px]">
-              <a href="/auth.html">Login</a>
-              <a href="/auth.html?s=reg">Register</a>
-            </div>
-          </div>
-          <div class="flex flex-col gap-[24px] max-md:gap-[12px]">
-            <p class="font-semibold">Profile</p>
-            <div class="flex flex-col gap-[8px]">
-              <a href="#">Dashboard</a>
-              <a href="#">Plans</a>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="hidden gap-[16px] max-xl:flex">
-            <a href="#"><img src="./assets/svg/x.svg" class="max-md:w-[20px] max-xl:w-[32px]" alt="x"></a>
-            <a href="#"><img src="./assets/svg/instagram.svg" class="max-md:w-[20px] max-xl:w-[32px]"
-                alt="instagram"></a>
-            <a href="#"><img src="./assets/svg/linkedin.svg" class="max-md:w-[20px] max-xl:w-[32px]" alt="linkedin"></a>
-            <a href="#"><img src="./assets/svg/facebook.svg" class="max-md:w-[20px] max-xl:w-[32px]" alt="facebook"></a>
-          </div>
-        </div>
-      </div>
-      <p class="border-t border-white/50 pt-[16px] max-md:text-[12px]">© 2025 Defendora. All rights reserved</p>
-    </div>
-  </footer>
-
-  <div class="relative w-full h-[120px] overflow-hidden" style="background-color: #fafafa;">
-    <p
-      class="text-center font-bold text-[240px] absolute left-[50%] -translate-x-[50%] top-[-97%] gradient-text max-xl:text-[160px] max-xl:top-[-35%] max-2xl:text-[230px] max-2xl:top-[-88%]">
-      Defendora</p>
-  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="./lib/owlCarousel/dist/owl.carousel.min.js"></script>

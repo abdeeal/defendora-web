@@ -6,4 +6,172 @@
   .navbar-wrapper {
     padding: 16px 64px;
   }
+
+  /* home */
+  .home {
+    padding-top: 164px;
+    padding-left: 128px;
+  }
+
+  .lock-img {
+    width: 450px;
+    right: 0%;
+  }
+
+  .hero-content {
+    gap: 32px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-text,
+  .tagline {
+    font-size: 12px;
+    margin-bottom: 64px;
+  }
+
+  .cta-wrapper {
+    font-size: 12px;
+  }
+
+  .puzzle-img {
+    width: 144px;
+  }
+
+  .circle-way-img {
+    transform: scale(0.8);
+  }
+
+  /* features */
+
+  .features {
+    min-width: 75%;
+  }
+
+  .features-title {
+    font-size: 14px;
+  }
+
+  #circle-way {
+    font-size: 14px;
+  }
+
+  #orbit-2 {
+    width: 170px;
+  }
+
+  #orbit-2 .orbit-text {
+    width: 90px;
+  }
+
+  #orbit-3 {
+    width: 455px;
+  }
+
+  #orbit-3 .orbit-text {
+    width: 90px;
+  }
+
+  #orbit-4 {
+    width: 385px;
+  }
+
+  #orbit-4 .orbit-text {
+    width: 90px;
+  }
+
+  /* facts */
+  .protections-text {
+    font-size: 14px;
+  }
+
+  .facts {
+    gap: 2%
+  }
+
+  #gear {
+    top: 35%;
+  }
+
+  .protection-card {
+    width: 450px;
+    height: 240px;
+  }
+
+  .protection-card p {
+    font-size: 14px;
+  }
+
+  /* threats */
+  .threats-text {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .threats-title {
+    padding-bottom: 16px;
+  }
+
+  .grid-threats span {
+    padding-top: 12px;
+  }
+
+  /* pricing */
+  .pricing-card {
+    min-width: 70%;
+  }
+
+  /* footer */
+  .footer-container {
+    width: 75%;
+  }
+
+  .ov-title {
+    font-size: 230px;
+    top: -88%;
+  }
+
+
+  /* =================== AUTH ================ */
+  .auth-container h2 {
+    font-size: 32px;
+    line-height: 110%;
+  }
+
+  .auth-container {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+
+  /* overview */
+  .data-scan-wrapper {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 12px;
+    font-size: 14px;
+  }
+
+  .data-scan-wrapper div:nth-child(1) {
+    display: none;
+  }
+
+  .data-scan-wrapper div:nth-child(2) {
+    display: none;
+  }
+
+  .files-count {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .data-none{
+    display: none;
+  }
+
+  .data-none{
+    display: none;
+  }
+
 }

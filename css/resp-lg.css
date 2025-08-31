@@ -6,6 +6,7 @@
   .navbar {
     padding: 0px 32px;
   }
+
   .navbar-light {
     padding: 0px 32px;
   }
@@ -18,12 +19,213 @@
     display: none;
   }
 
+
   .btn-burger {
     display: inline;
   }
 
   .nav-modal-active {
+    display: flex !important;
+  }
+
+  /* end navbar */
+
+  /* container */
+  #section-wrapper {
+    gap: 256px
+  }
+
+  /* home */
+  .home {
+    padding-top: 168px;
+  }
+
+  .lock-img {
+    right: -22%;
+    bottom: 5%;
+    width: 520px;
+  }
+
+  .hero-content {
+    gap: 48px;
+  }
+
+  .hero-title {
+    font-size: 64px;
+  }
+
+  .hero-text,
+  .tagline {
+    font-size: 16px;
+  }
+
+  .cta-wrapper {
+    font-size: 16px;
+  }
+
+  .hero-title br:nth-child(2) {
+    display: none;
+  }
+
+
+  /* features */
+  .features {
+    padding-top: 148px;
+    gap: 15%;
+  }
+
+  .features-title {
+    max-width: 505px;
+  }
+
+  /* facts */
+  .facts {
+    padding-top: 148px;
+    padding-left: 32px;
+    padding-right: 32px;
+    gap: 10%;
+    width: 1024px;
+  }
+
+  .protections-text {
+    max-width: 505px;
+  }
+
+  .br-lg {
+    display: none;
+  }
+
+  .protections-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-bottom: 32px;
+  }
+
+  .protection-card {
+    width: 450px;
+    height: 280px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px;
+    backdrop-filter: blur(8px);
+  }
+
+  .protection-card h3 {
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .protection-card p {
+    color: #d1d5db;
+    /* text-gray-300 */
+  }
+
+  .heading-threats {
+    font-size: 32px;
+  }
+
+  /* bubble */
+  #ransomware-bubble {
+    width: 330px;
+    height: 104px;
+    right: 28%;
+    top: 15%;
+  }
+
+  #cyberattacks-bubble {
+    width: 350px;
+    height: 104px;
+    right: 52%;
+    top: 30%;
+  }
+
+  .ransomware-icon,
+  .cyber-icon {
+    width: 48px;
+  }
+
+  .bubble-title {
+    font-size: 32px;
+  }
+
+  #stolendata-bubble {
+    width: 320px;
+    height: 104px;
+    top: 55%;
+    right: 24%;
+  }
+
+  #tracking-bubble {
+    width: 350px;
+    height: 104px;
+    top: 85%;
+    right: 40%;
+  }
+
+  #stolendata-bubble img,
+  #tracking-bubble img {
+    width: 48px;
+  }
+
+  #stolendata-bubble p,
+  #tracking-bubble p {
+    font-size: 32px;
+  }
+
+  /* threats */
+  .modern-heading {
+    font-size: 32px;
+  }
+
+  .modern-paragraph {
+    font-size: 16px;
+    margin-top: 14px;
+    margin-bottom: 48px;
+  }
+
+  /* pricing */
+  .scroll-pricing {
+    overflow-x: auto;
+    display: inline;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .pricing-card {
+    max-width: none;
+    width: 1000px;
+  }
+
+  .scroll-sideways {
+    display: flex;
+    transform: translateY(20px);
+    color: #4B5563;
+  }
+
+  /* ============ AUTH ============ */
+
+  .inner-box p:nth-child(1) {
+    font-size: 24px;
+  }
+
+  /* overview */
+  .df-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .df-box-left {
+    grid-column: span 3 / span 3;
+  }
+
+  /* ==== subscription ==== */
+  .transaction-mobile {
     display: flex;
   }
 
+  .transaction-table {
+    display: none;
+  }
 }

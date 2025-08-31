@@ -4,10 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="./lib/owlCarousel/dist/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="./lib/owlCarousel/dist/assets/owl.theme.default.min.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/preflight.css">
+  <link rel="stylesheet" href="./css/profile.css">
   <link rel="stylesheet" href="./css/resp-2xl.css">
   <link rel="stylesheet" href="./css/resp-xl.css">
   <link rel="stylesheet" href="./css/resp-lg.css">
@@ -27,15 +25,25 @@
   <title>Defendora</title>
 </head>
 
-<body id="overview-body" class="bg-black font-inter">
+<body id="overview-body" class="font-inter">
 
-  <div class="grid grid-cols-[repeat(100,minmax(0,1fr))] w-full min-h-dvh text-white max-xl:grid-cols-1">
-    <div id="sidebar"
-      class="col-span-17 flex flex-col justify-between border-r-1 h-screen border-[#1e1e1e] px-[24px] py-[32px] sticky left-0 top-0 max-xl:col-span-1 max-xl:w-full max-xl:h-fit max-xl:bg-black max-xl:border-b max-xl:border-white/15 z-100">
+  <div class="hide-loader">
+    <div id="loader" class="loader-dots center-screen">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="alert-banner" id="alertBanner">
+    Some features are unavailable as this is only a website preview.
+    <div class="progress-bar"></div>
+  </div>
+
+  <div class="layout-ov">
+    <div id="sidebar">
       <div>
-        <div class="flex justify-between items-center">
-          <a href="/" class="font-montserrat text-[24px] font-semibold">Defendora</a>
-          <button onclick="toggleModal()" class="max-xl:flex hidden">
+        <div class="df-header">
+          <a href="/" class="df-logo">Defendora</a>
+          <button onclick="toggleModal()" class="df-menu-btn">
             <svg width="28" height="11" viewBox="0 0 28 11" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M26.8333 2.44444H1.16667C0.522668 2.44444 9.53674e-07 1.89689 9.53674e-07 1.22222C9.53674e-07 0.547556 0.522668 0 1.16667 0H14H26.8333C27.4773 0 28 0.547556 28 1.22222C28 1.89689 27.4773 2.44444 26.8333 2.44444ZM28 9.77778C28 9.10311 27.4773 8.55556 26.8333 8.55556H1.16667C0.522668 8.55556 9.53674e-07 9.10311 9.53674e-07 9.77778C9.53674e-07 10.4524 0.522668 11 1.16667 11H26.8333C27.4773 11 28 10.4524 28 9.77778Z"
@@ -43,93 +51,98 @@
             </svg>
           </button>
         </div>
-        <div class="flex flex-col gap-[24px] mt-[64px] max-xl:hidden">
-          <a href="/overview.html" class="flex items-center gap-[12px]">
-            <i class='bx  bx-dashboard text-[24px]'></i>
-            <p class="font-semibold text-[20px]">Overview</p>
+        <div class="df-sidebar-links">
+          <a href="/overview.html" class="df-link">
+            <i class='bx bx-dashboard df-icon'></i>
+            <p class="df-text">Overview</p>
           </a>
-          <a href="/subscription.html" class="flex items-center gap-[12px]">
-            <i class='bx  bx-receipt text-[24px]'></i>
-            <p class="font-semibold text-[20px]">Subscription</p>
+          <a href="/subscription.html" class="df-link">
+            <i class='bx bx-receipt df-icon'></i>
+            <p class="df-text">Subscription</p>
           </a>
-          <a href="/" class="flex items-center gap-[12px] border-t border-white/15 pt-[24px]">
-            <i class='bx  bx-home-alt-2 text-[24px]'></i>
-            <p class="font-semibold text-[20px]">Home</p>
+          <a href="/" class="df-link df-link-home">
+            <i class='bx bx-home-alt-2 df-icon'></i>
+            <p class="df-text">Home</p>
           </a>
         </div>
+
       </div>
-      <div class="flex flex-col gap-[24px] max-xl:hidden">
-        <a href="/overview.html" class="flex items-center gap-[12px]">
-          <i class='bx  bx-headphone-mic text-[24px]'></i>
-          <p class="font-semibold text-[20px]">Support</p>
+      <div class="df-support-logout">
+        <a href="/overview.html" class="df-link">
+          <i class='bx bx-headphone-mic df-icon'></i>
+          <p class="df-text">Support</p>
         </a>
-        <a href="/overview.html" class="flex items-center gap-[12px]">
-          <i class='bx  bx-door-open text-[24px]'></i>
-          <p class="font-semibold text-[20px]">Log Out</p>
-        </a>
+        <button class="df-link btn-logout" onclick="logout()">
+          <i class='bx bx-door-open df-icon'></i>
+          <p class="df-text">Logout</p>
+        </button>
       </div>
     </div>
 
     <!-- modal -->
-    <div id="nav-profile-modal" class="fixed w-full h-dvh z-20 bg-black/50 hidden">
-      <div id="nav-profile-wrapper"
-        class="fixed top-[64px] w-full h-fit bg-black border-b border-white/15 px-[20px] pt-[48px] pb-[24px] font-montserrat font-semibold text-[32px] overflow-hidden">
-        <div class="flex flex-col gap-[16px] mb-[16px]">
+    <div id="nav-profile-modal" class="df-nav-profile-modal">
+      <div id="nav-profile-wrapper" class="df-nav-profile-wrapper">
+        <div class="df-nav-section-top">
           <a onclick="toggleModal()" href="/overview.html">Overview</a>
           <a onclick="toggleModal()" href="/subscription.html">Subscription</a>
         </div>
-        <div class="py-[40px] border-y border-white/15">
-          <a onclick="toggleModal()" href="/" class="">Home</a>
+        <div class="df-nav-section-middle">
+          <a onclick="toggleModal()" href="/">Home</a>
         </div>
-        <div class="flex flex-col gap-[16px] mt-[16px]">
+        <div class="df-nav-section-bottom">
           <a onclick="toggleModal()" href="/overview.html">Support</a>
-          <a onclick="toggleModal()" href="/subscription.html">Logout</a>
+          <button onclick="logout()" class="btn-logout">Logout</button>
         </div>
       </div>
     </div>
+
     <!-- end modal -->
 
-    <div id="subscription-mid" class="col-span-83 px-[24px] py-[32px] max-xl:col-span-1">
-      <div class="flex justify-between items-center">
-        <p class="font-semibold text-[20px]">Billing and subscription</p>
-        <div class="flex items-center gap-[12px] max-xl:hidden">
+    <div id="subscription-mid" class="subscription-box">
+      <div class="subscription-header">
+        <p class="title">Billing and subscription</p>
+        <div class="subscription-renew desktop-only">
           <img src="./assets/svg/warning.svg" alt="warning">
           <p>Your subscription renews on August 27</p>
         </div>
       </div>
-      <p class="text-[#737373] max-md:text-[14px]">Upgrade to enable unlimited tracking, enhanced security controls, and
-        additional
-        features.</p>
-      <div class="max-xl:flex hidden items-center gap-[12px] mt-[16px] max-md:text-[14px]">
+
+      <p class="subscription-desc">
+        Upgrade to enable unlimited tracking, enhanced security controls, and additional features.
+      </p>
+
+      <div class="subscription-renew mobile-only">
         <img src="./assets/svg/warning.svg" alt="warning">
         <p>Your subscription renews on August 27</p>
       </div>
 
 
-      <div
-        class="w-full grid grid-cols-3 gap-[24px] py-[36px] max-xl:grid-cols-1 max-md:w-full max-xl:w-[50%] max-xl:translate-x-[50%] max-md:translate-x-0">
-
-        <div class="w-full h-full bg-[#2c2c2c] px-[24px] py-[32px] rounded-[24px] flex flex-col">
-          <div class="flex flex-col gap-[8px]">
-            <img src="./assets/images/pro.png" alt="pro" class="h-[64px] w-[53px]">
-            <p class="font-bold text-[24px] mt-[4px]">Pro</p>
-            <p class="text-[#bebebe]">Comprehensive security with premium features.</p>
+      <div class="plans-wrapper">
+        <!-- Pro Plan -->
+        <div class="plan-card">
+          <div class="plan-header">
+            <img src="./assets/images/pro.png" alt="pro" class="plan-img-pro">
+            <p class="plan-title">Pro</p>
+            <p class="plan-desc">Comprehensive security with premium features.</p>
           </div>
-          <div class="mt-[32px] flex flex-col gap-[16px]">
-            <p class="font-bold text-[32px]">IDR 119.000 <span class="font-normal text-[16px] text-[#bebebe]"> /
-                month</span></p>
-            <button class="px-[100px] max-md:px-[64px] py-[20px] text-black bg-white rounded-[12px]">Change
-              Plan</button>
-            <div class="flex gap-[12px] items-center">
-              <i class='bx  bxs-check-circle text-[24px]'></i>
+
+          <div class="plan-body">
+            <p class="plan-price">
+              IDR 119.000
+              <span class="plan-period">/ month</span>
+            </p>
+            <button onclick="preview()" class="plan-btn">Change Plan</button>
+
+            <div class="plan-feature">
+              <i class='bx bxs-check-circle'></i>
               <p>Unlock advance features</p>
             </div>
-            <div class="flex gap-[12px] items-center">
-              <i class='bx  bxs-check-circle text-[24px]'></i>
+            <div class="plan-feature">
+              <i class='bx bxs-check-circle'></i>
               <p>Up to 3 devices</p>
             </div>
-            <div class="flex gap-[12px] items-center">
-              <i class='bx  bxs-check-circle text-[24px]'></i>
+            <div class="plan-feature">
+              <i class='bx bxs-check-circle'></i>
               <p>Premium support access</p>
             </div>
           </div>
@@ -137,54 +150,53 @@
 
         <div class="ultimate-card">
           <div class="ultimate-wrapper">
-            <div class="flex flex-col gap-[8px]">
-              <img src="./assets/images/ultimate.png" alt="ultimate" class="h-[64px] w-[77px]">
-              <p class="font-bold text-[24px] mt-[4px]">Ultimate</p>
-              <p class="text-[#bebebe]">Maximum protection to secure your devices.</p>
+            <div class="plan-header">
+              <img src="./assets/images/ultimate.png" alt="ultimate" class="plan-img-ult">
+              <p class="plan-title">Ultimate</p>
+              <p class="plan-desc">Maximum protection to secure your devices.</p>
             </div>
-            <div class="mt-[32px] flex flex-col gap-[16px]">
-              <p class="font-bold text-[32px]">IDR 279.000 <span class="font-normal text-[16px] text-[#bebebe]"> /
+            <div class="plan-body">
+              <p class="plan-price">IDR 279.000 <span class="plan-period"> /
                   month</span></p>
-              <button
-                class="px-[100px] max-md:px-[64px] py-[20px] text-white bg-[#CE1C1C]/5 border border-[#941414] rounded-[12px]">Current
+              <button class="ultimate-btn">Current
                 Plan</button>
-              <div class="flex gap-[12px] items-center">
-                <i class='bx  bxs-check-circle text-[24px] text-[#CE1C1C]'></i>
+              <div class="ultimate-feature">
+                <i class='bx  bxs-check-circle'></i>
                 <p>Unlock all features</p>
               </div>
-              <div class="flex gap-[12px] items-center">
-                <i class='bx  bxs-check-circle text-[24px] text-[#CE1C1C]'></i>
+              <div class="ultimate-feature">
+                <i class='bx  bxs-check-circle'></i>
                 <p>Unlimited devices</p>
               </div>
-              <div class="flex gap-[12px] items-center">
-                <i class='bx  bxs-check-circle text-[24px] text-[#CE1C1C]'></i>
+              <div class="ultimate-feature">
+                <i class='bx  bxs-check-circle'></i>
                 <p>Priority 24/7 expert support</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="w-full h-full bg-[#2c2c2c] px-[24px] py-[32px] rounded-[24px] flex flex-col">
-          <div class="flex flex-col gap-[8px]">
-            <img src="./assets/images/basic.png" alt="basic" class="h-[64px] w-[66px]">
-            <p class="font-bold text-[24px] mt-[4px]">Basic</p>
-            <p class="text-[#bebebe]">Essential protection for your personal device.</p>
+        <div class="plan-card">
+          <div class="plan-header">
+            <img src="./assets/images/basic.png" alt="basic" class="plan-img-basic">
+            <p class="plan-title">Basic</p>
+            <p class="plan-desc">Essential protection for your personal device.</p>
           </div>
-          <div class="mt-[32px] flex flex-col gap-[16px]">
-            <p class="font-bold text-[32px]">IDR 59.000 <span class="font-normal text-[16px] text-[#bebebe]"> /
+          <div class="plan-body">
+            <p class="plan-price">IDR 59.000 <span class="plan-period"> /
                 month</span></p>
-            <button class="px-[100px] max-md:px-[64px] py-[20px] text-black bg-white rounded-[12px]">Change
+            <button onclick="preview()" class="plan-btn">Change
               Plan</button>
-            <div class="flex gap-[12px] items-center">
-              <i class='bx  bx-check-circle text-[24px]'></i>
+            <div class="basic-feature">
+              <i class='bx  bx-check-circle'></i>
               <p>Real-time threat protection</p>
             </div>
-            <div class="flex gap-[12px] items-center">
-              <i class='bx  bx-check-circle text-[24px]'></i>
+            <div class="basic-feature">
+              <i class='bx  bx-check-circle'></i>
               <p>Regular security updates</p>
             </div>
-            <div class="flex gap-[12px] items-center">
-              <i class='bx  bx-check-circle text-[24px]'></i>
+            <div class="basic-feature">
+              <i class='bx  bx-check-circle'></i>
               <p>Protection for 1 device</p>
             </div>
           </div>
@@ -193,24 +205,24 @@
       </div>
 
       <p>Subscription history</p>
-      <div class="w-full bg-[#2c2c2c] p-[24px] rounded-[16px] mt-[16px]">
+      <div class="subscription-wrapper">
         <!-- desktop -->
-        <table class="w-full text-left max-lg:hidden">
-          <thead class="mb-[16px]">
+        <table class="transaction-table">
+          <thead>
             <th>Date</th>
             <th>Plan</th>
             <th>Price</th>
             <th>Payment Method</th>
             <th>Status</th>
           </thead>
-          <tbody class="text-[#737373]">
+          <tbody class="transaction-body">
             <tr>
               <td>28 July 2025 15:32:49</td>
               <td>Ultimate</td>
               <td>IDR 279.000</td>
               <td>Credit Card (*****31)</td>
               <td>
-                <p class="text-[#22C55E] px-[24px] bg-[#198754]/25 rounded-full w-[128px] text-center">Completed</p>
+                <p class="status-completed">Completed</p>
               </td>
             </tr>
             <tr>
@@ -219,7 +231,7 @@
               <td>IDR 279.000</td>
               <td>Credit Card (*****31)</td>
               <td>
-                <p class="text-[#22C55E] px-[24px] bg-[#198754]/25 rounded-full w-[128px] text-center">Completed</p>
+                <p class="status-completed">Completed</p>
               </td>
             </tr>
             <tr>
@@ -228,54 +240,52 @@
               <td>IDR 119.000</td>
               <td>Credit Card (*****31)</td>
               <td>
-                <p class="text-[#F59E0B] px-[24px] bg-[#FFC107]/25 rounded-full w-[128px] text-center">Refunded</p>
+                <p class="status-refunded">Refunded</p>
               </td>
             </tr>
           </tbody>
         </table>
 
+
         <!-- mobile -->
-        <div class="max-lg:flex flex-col hidden pb-[8px] border-b border-white/15 max-md:text-[14px] gap-[8px]">
-          <div class="flex justify-between items-center">
-            <p>Date <span class="text-[#737373] ml-[12px]"> : 28 july 2025 15:32:49</span></p>
-            <i class='bx  bxs-chevron-down text-[24px]'></i>
+        <div class="transaction-mobile">
+          <div class="transaction-header">
+            <p>Date <span class="date-value"> : 28 july 2025 15:32:49</span></p>
+            <i class='bx bxs-chevron-down transaction-icon'></i>
           </div>
-          <div class="flex flex-col gap-[8px] hidden">
-            <p>Plan <span class="text-[#737373] ml-[12px]"> : Ultimate</span></p>
-            <p>Price <span class="text-[#737373] ml-[12px]"> : IDR 229.000</span></p>
-            <p>Payment method <span class="text-[#737373] ml-[12px]"> : Credit Card (*****31)</span></p>
-            <p>Status <span class="text-[#737373] ml-[12px]"> : <span
-                  class="text-[#22C55E] px-[24px] bg-[#198754]/25 rounded-full w-[128px] text-center">Completed</span></span>
+          <div class="transaction-details transaction-hide">
+            <p>Plan <span class="detail-value"> : Ultimate</span></p>
+            <p>Price <span class="detail-value"> : IDR 229.000</span></p>
+            <p>Payment method <span class="detail-value"> : Credit Card (*****31)</span></p>
+            <p>Status <span class="detail-value"> : <span class="status-completed-t">Completed</span></span></p>
+          </div>
+        </div>
+
+
+        <div class="transaction-mobile">
+          <div class="transaction-header">
+            <p>Date <span class="detail-value"> : 27 June 2025 14:11:04</span></p>
+            <i class='bx  bxs-chevron-down transaction-icon'></i>
+          </div>
+          <div class="transaction-details transaction-hide">
+            <p>Plan <span class="detail-value"> : Ultimate</span></p>
+            <p>Price <span class="detail-value"> : IDR 229.000</span></p>
+            <p>Payment method <span class="detail-value"> : Credit Card (*****31)</span></p>
+            <p>Status <span class="detail-value"> : <span class="status-completed-t">Completed</span></span>
             </p>
           </div>
         </div>
 
-        <div class="max-lg:flex flex-col hidden pb-[8px] border-b border-white/15 max-md:text-[14px] gap-[8px]">
-          <div class="flex justify-between items-center">
-            <p>Date <span class="text-[#737373] ml-[12px]"> : 27 June 2025 14:11:04</span></p>
-            <i class='bx  bxs-chevron-down text-[24px]'></i>
+        <div class="transaction-mobile">
+          <div class="transaction-header">
+            <p>Date <span class="detail-value"> : 27 June 2025 20:44:58</span></p>
+            <i class='bx  bxs-chevron-down transaction-icon'></i>
           </div>
-          <div class="flex flex-col gap-[8px] hidden">
-            <p>Plan <span class="text-[#737373] ml-[12px]"> : Ultimate</span></p>
-            <p>Price <span class="text-[#737373] ml-[12px]"> : IDR 229.000</span></p>
-            <p>Payment method <span class="text-[#737373] ml-[12px]"> : Credit Card (*****31)</span></p>
-            <p>Status <span class="text-[#737373] ml-[12px]"> : <span
-                  class="text-[#22C55E] px-[24px] bg-[#198754]/25 rounded-full w-[128px] text-center">Completed</span></span>
-            </p>
-          </div>
-        </div>
-
-        <div class="max-lg:flex flex-col hidden pb-[8px] border-b border-white/15 max-md:text-[14px] gap-[8px]">
-          <div class="flex justify-between items-center">
-            <p>Date <span class="text-[#737373] ml-[12px]"> : 27 June 2025 20:44:58</span></p>
-            <i class='bx  bxs-chevron-down text-[24px]'></i>
-          </div>
-          <div class="flex flex-col gap-[8px] hidden">
-            <p>Plan <span class="text-[#737373] ml-[12px]"> : Pro</span></p>
-            <p>Price <span class="text-[#737373] ml-[12px]"> : IDR 119.000</span></p>
-            <p>Payment method <span class="text-[#737373] ml-[12px]"> : Credit Card (*****31)</span></p>
-            <p>Status <span class="text-[#737373] ml-[12px]"> : <spam
-                  class="text-[#F59E0B] px-[24px] bg-[#FFC107]/25 rounded-full w-[128px] text-center">Refunded</spam>
+          <div class="transaction-details transaction-hide">
+            <p>Plan <span class="detail-value"> : Pro</span></p>
+            <p>Price <span class="detail-value"> : IDR 119.000</span></p>
+            <p>Payment method <span class="detail-value"> : Credit Card (*****31)</span></p>
+            <p>Status <span class="detail-value"> :<spam class="status-refunded-t">Refunded</spam>
               </span>
             </p>
           </div>
@@ -286,7 +296,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="./js/overview.js"></script>
+  <script src="./js/subscription.js"></script>
 </body>
 
 </html>

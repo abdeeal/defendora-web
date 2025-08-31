@@ -64,10 +64,26 @@ function initParticleCanvas(containerSelector, canvasId) {
 }
 
 // panggil untuk dua canvas berbeda
-initParticleCanvas(".side-auth", "canvas");
+initParticleCanvas(".side-auth", "canvasRight");
 initParticleCanvas(".side-auth-mobile", "canvas-mobile");
 
+const vLoader = document.querySelector(".hide-loader");
+function loading(dur) {
+  vLoader.classList.remove("fade-out");
+  vLoader.classList.remove("hide-loader");
 
+  setTimeout(() => {
+    vLoader.classList.add("fade-out");
+    document.body.style.overflow = "hidden";
+
+    setTimeout(() => {
+      document.body.style.overflow = "";
+      vLoader.classList.add("hide-loader");
+
+      vLoader.classList.remove("fade-out");
+    }, 600);
+  }, dur);
+}
 
 // auth change
 document.addEventListener("DOMContentLoaded", () => {
@@ -107,11 +123,31 @@ document.addEventListener("DOMContentLoaded", () => {
   function setInitialState() {
     const section = new URLSearchParams(window.location.search).get("s");
     if (section === "reg") {
-      gsap.set(registerForm, { x: "0%", opacity: 1, pointerEvents: "auto", zIndex: 2 });
-      gsap.set(loginForm, { x: "-100%", opacity: 0, pointerEvents: "none", zIndex: 1 });
+      gsap.set(registerForm, {
+        x: "0%",
+        opacity: 1,
+        pointerEvents: "auto",
+        zIndex: 2,
+      });
+      gsap.set(loginForm, {
+        x: "-100%",
+        opacity: 0,
+        pointerEvents: "none",
+        zIndex: 1,
+      });
     } else {
-      gsap.set(loginForm, { x: "0%", opacity: 1, pointerEvents: "auto", zIndex: 2 });
-      gsap.set(registerForm, { x: "100%", opacity: 0, pointerEvents: "none", zIndex: 1 });
+      gsap.set(loginForm, {
+        x: "0%",
+        opacity: 1,
+        pointerEvents: "auto",
+        zIndex: 2,
+      });
+      gsap.set(registerForm, {
+        x: "100%",
+        opacity: 0,
+        pointerEvents: "none",
+        zIndex: 1,
+      });
     }
   }
 
@@ -133,14 +169,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const toStartX = direction === "left" ? "10%" : "-10%";
     const fromEndX = direction === "left" ? "-10%" : "10%";
 
-    gsap.set(toEl, { x: toStartX, opacity: 0, pointerEvents: "none", zIndex: 3 });
+    gsap.set(toEl, {
+      x: toStartX,
+      opacity: 0,
+      pointerEvents: "none",
+      zIndex: 3,
+    });
     gsap.set(fromEl, { zIndex: 2 });
 
     const tl = gsap.timeline({
       defaults: { duration: 0.55, ease: "power2.out" },
       onComplete: () => {
-        gsap.set(toEl, { x: "0%", opacity: 1, pointerEvents: "auto", zIndex: 2 });
-        gsap.set(fromEl, { x: fromEndX, opacity: 0, pointerEvents: "none", zIndex: 1 });
+        gsap.set(toEl, {
+          x: "0%",
+          opacity: 1,
+          pointerEvents: "auto",
+          zIndex: 2,
+        });
+        gsap.set(fromEl, {
+          x: fromEndX,
+          opacity: 0,
+          pointerEvents: "none",
+          zIndex: 1,
+        });
         isAnimating = false;
       },
     });
@@ -148,13 +199,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // animasi keluar dulu
     tl.to(fromEl, { x: fromEndX, opacity: 0 })
       // baru animasi masuk
-      .fromTo(toEl, { x: toStartX, opacity: 0 }, { x: "0%", opacity: 1 }, "0.4");
+      .fromTo(
+        toEl,
+        { x: toStartX, opacity: 0 },
+        { x: "0%", opacity: 1 },
+        "0.4"
+      );
   }
 
   if (goRegister) {
     goRegister.addEventListener("click", (e) => {
       e.preventDefault();
-      if (new URLSearchParams(window.location.search).get("s") === "reg") return;
+      if (new URLSearchParams(window.location.search).get("s") === "reg")
+        return;
       history.pushState(null, "", "?s=reg");
       animateTo("reg");
     });
@@ -163,7 +220,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (goLogin) {
     goLogin.addEventListener("click", (e) => {
       e.preventDefault();
-      if (new URLSearchParams(window.location.search).get("s") !== "reg") return;
+      if (new URLSearchParams(window.location.search).get("s") !== "reg")
+        return;
       history.pushState(null, "", "?s=login");
       animateTo("login");
     });
@@ -176,3 +234,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setInitialState();
 });
+
+function login() {
+  const u = document.querySelector("#username").value;
+  const p = document.querySelector("#password").value;
+  const erl = document.querySelector(".errmsgL");
+
+  if (u && p) {
+    loading(1000);
+    setTimeout(() => {
+      localStorage.setItem("login", "John Doe");
+      window.location.href = "overview.html";
+    }, 1000);
+  } else {
+    erl.innerHTML = "Username atau password tidak boleh kosong.";
+  }
+}
+
+function gLogin() {
+  loading(3000);
+  localStorage.setItem("login", "John Doe");
+  window.location.href = "overview.html";
+}
+
+function register() {
+  const u = document.querySelector("#usernameReg").value;
+  const p = document.querySelector("#passwordReg").value;
+  const err = document.querySelector(".errmsgR");
+
+  if (u && p) {
+    loading(1000);
+    setTimeout(() => {
+      window.location.href = "auth.html";
+    }, 1000);
+  } else {
+    err.innerHTML = "Username atau password tidak boleh kosong.";
+  }
+}

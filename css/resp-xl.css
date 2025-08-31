@@ -11,6 +11,210 @@
     padding: 20px 32px;
   }
 
+  /* end navbar */
+
+  /* container */
+  #red-bubble {
+    width: 200%;
+    right: -90%;
+    top: -5%;
+  }
+
+  #section-wrapper {
+    gap: 100px
+  }
+
+  /* home */
+  .home {
+    padding-top: 200px;
+    padding-left: 64px;
+  }
+
+  .lock-img {
+    right: -24%;
+    bottom: 5%;
+    width: 750px;
+  }
+
+  .hero-content {
+    gap: 64px;
+  }
+
+  .hero-title {
+    font-size: 80px;
+  }
+
+  .hero-content .hero-title:nth-child(2){
+    display: none;
+  }
+
+  .hero-content .hero-title:nth-child(1){
+    display: inline;
+  }
+
+  .hero-text,
+  .tagline {
+    font-size: 20px;
+  }
+
+  .cta-wrapper {
+    font-size: 20px;
+    padding: 12px 12px 12px 56px;
+  }
+
+
+  /* features */
+  .features {
+    padding-top: 220px;
+    gap: 20%;
+    min-width: 100%;
+  }
+
+  .features-title {
+    font-size: 16px;
+  }
+
+  .features-title br:nth-of-type(1) {
+    display: none;
+    /* sembunyikan <br> */
+  }
+
+  #circle-way {
+    font-size: 20px;
+  }
+
+  .puzzle-img {
+    width: auto;
+  }
+
+  .circle-way-img {
+    transform: scale(1.1);
+  }
+
+  #orbit-1 {
+    width: 265px;
+  }
+
+  #orbit-1 .orbit-text {
+    width: 90px;
+  }
+
+  #orbit-2 {
+    width: 370px;
+  }
+
+  #orbit-2 .orbit-text {
+    width: 145px;
+  }
+
+  #orbit-3 {
+    width: 590px;
+  }
+
+  #orbit-3 .orbit-text {
+    width: 145px;
+  }
+
+  #orbit-4 {
+    width: 575px;
+  }
+
+  #orbit-4 .orbit-text {
+    width: 145px;
+  }
+
+  /* facts */
+  .facts {
+    padding-top: 220px;
+    gap: 20%;
+  }
+
+  .protections-text {
+    font-size: 16px;
+  }
+
+  #gear {
+    top: 35%;
+  }
+
+  .protection-card {
+    width: 450px;
+    height: 280px;
+  }
+
+  .protection-card p {
+    font-size: 16px;
+  }
+
+  /* threats */
+  .threats-container {
+    display: none;
+  }
+
+  .threats-mobile-wrapper {
+    display: flex;
+    height: 560px;
+  }
+
+  .threats-mobile-card {
+    width: 60%;
+    padding: 32px 24px;
+  }
+
+  .threats-mobile-title {
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+
+  .threats-container-mobile {
+    gap: 16px
+  }
+
+  /* footer */
+  .footer-container {
+    width: 80%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .footer-left {
+    flex-direction: row;
+    grid-column: span 1;
+    height: 64px !important;
+  }
+
+  .hero-text-footer {
+    line-height: 100%;
+  }
+
+  .br-xl {
+    display: inline;
+  }
+
+  .br-hide {
+    display: none;
+  }
+
+  .social-links {
+    display: none;
+  }
+
+  .social-links-alt {
+    display: flex;
+  }
+
+  .social-links-alt a img {
+    width: 32px;
+  }
+
+  .ov-title {
+    font-size: 160px;
+    top: -35%;
+  }
+
   .owl-stage-outer {
     padding-bottom: 28px;
   }
@@ -24,7 +228,115 @@
     align-items: center;
   }
 
-  #form-register, #form-login {
+  /* ================ AUTH ================== */
+
+  .grid-wrapper {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  #brand-auth {
+    margin: 40px 32px;
+  }
+
+  #form-register,
+  #form-login {
     top: 12% !important
   }
+
+  .col-span-3-custom {
+    grid-column: span 1 / span 1;
+  }
+
+  .inner-box {
+    padding: 48px;
+    display: flex;
+  }
+
+  .inner-box p:nth-child(1) {
+    font-size: 32px;
+  }
+
+  .side-auth {
+    display: none;
+  }
+
+  /* =============== PROFILE ====================== */
+
+  .layout-ov {
+    grid-template-columns: 1fr;
+    /* jadi single column */
+  }
+
+  #sidebar {
+    grid-column: span 1 / span 1;
+    width: 100%;
+    height: fit-content;
+    background-color: black;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: none;
+    /* karena berubah ke border bawah */
+  }
+
+  .df-menu-btn {
+    display: flex;
+  }
+
+  .df-header {
+    padding: 0px
+  }
+
+  .df-sidebar-links {
+    display: none;
+  }
+
+  .df-support-logout {
+    display: none;
+  }
+
+  #overview-mid {
+    grid-column: span 1 / span 1;
+  }
+
+  .df-right {
+    grid-column: span 1 / span 1;
+  }
+
+  .df-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .df-box-left {
+    grid-column: span 2 / span 2;
+  }
+
+  /* ========= subcription ============= */
+
+  .subscription-box {
+    grid-column: span 1;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: flex;
+    font-size: 14px;
+  }
+
+  .subscription-desc {
+    font-size: 14px;
+  }
+
+  .plans-wrapper {
+    grid-template-columns: 1fr;
+    width: 50%;
+    transform: translateX(50%);
+  }
+
+  .alert-banner {
+    bottom: 16px;
+    top: auto;
+  }
+
 }
